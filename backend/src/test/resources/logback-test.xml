@@ -7,7 +7,12 @@
     </encoder>
   </appender>
 
-  <logger name="com.asherwin" level="DEBUG"/>
+  <logger name="com.zaxxer.hikari" level="INFO"/>
+  <logger name="org.springframework" level="INFO"/>
+  <logger name="org.flywaydb" level="INFO"/>
+  <logger name="org.apache" level="INFO"/>
+
+  <logger name="org.asherwin" level="DEBUG"/>
 
   <root level="DEBUG">
     <appender-ref ref="STDOUT"/>
