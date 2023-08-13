@@ -5,3 +5,11 @@ spring:
     locations: "classpath:db/migration"
     baseline-on-migrate: true
     cleanDisabled: false
+  thymeleaf:
+    cache: false
+    check-template: true
+#    check if we want enable-spring-el-compiler ?
+    enable-spring-el-compiler: false
+    produce-partial-output-while-processing: true
+#    prefix: classpath:/templates/
+
