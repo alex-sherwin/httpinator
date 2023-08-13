@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>HTMX!</title>
+    <script src="/node_modules/htmx.org/dist/htmx.js"></script>
+</head>
+<body>
+
+<p>inlined</p>
+<p hx-get="/api/ping">
+    before ping
+</p>
+<p hx-get="/api/test1">
+    before test1
+</p>
+<p hx-get="/api/test1" hx-trigger="load">
+    before test1
+</p>
+
+
+</body>
+</html>

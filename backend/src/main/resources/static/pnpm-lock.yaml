@@ -11,6 +11,9 @@ dependencies:
   hack-font:
     specifier: 3.3.0
     version: 3.3.0
+  htmx.org:
+    specifier: 1.9.4
+    version: 1.9.4
   monaco-editor:
     specifier: 0.41.0
     version: 0.41.0
@@ -23,6 +26,10 @@ packages:
 
   /hack-font@3.3.0:
     resolution: {integrity: sha512-RohrcAr3UaKiIoxDlOytCjObcUAucfFc6V5fKu6gBrvmvTfIXeBqZwR0Q5kb9qpbluThJWt326LClLKIGiFyug==}
+    dev: false
+
+  /htmx.org@1.9.4:
+    resolution: {integrity: sha512-GB9afD20gYw708z2PjClwlDgNtD1p4RYQtlDKak/JyMhrgiSL8sPfGqdkNmSLrhuCFekWw9mLpRNK/+Xn9aayA==}
     dev: false
 
   /monaco-editor@0.41.0:

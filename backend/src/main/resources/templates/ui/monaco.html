@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Monaco!</title>
+
+  <th:block th:insert="~{mixins/fonts :: head}"></th:block>
+  <th:block th:insert="~{mixins/monaco :: head}"></th:block>
+
+  <style>
+      #container {
+          width: 800px;
+          height: 600px;
+          border: 1px solid grey;
+      }
+  </style>
+
+</head>
+<body>
+
+<div id="container"></div>
+
+<script>
+
+    var editor = monaco.editor.create(document.getElementById('container'), {
+        value: ['function x() {', '\tconsole.log("Hello world!");', '}'].join('\n'),
+        language: 'javascript',
+        fontFamily: "Hack",
+        fontSize: 16,
+    });
+
+</script>
+
+</body>
+</html>

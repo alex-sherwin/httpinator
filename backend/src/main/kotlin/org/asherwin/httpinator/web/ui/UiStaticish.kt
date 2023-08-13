@@ -11,4 +11,10 @@ class UiStaticish {
   @GetMapping(path = ["", "/", "/index.html"])
   fun index(): String = "ui/index"
 
+  @GetMapping(path = ["/monaco"])
+  fun monaco(): String = "ui/monaco"
+
+  @GetMapping(path = ["/htmx"])
+  fun htmx(): String = "ui/htmx"
+
 }
