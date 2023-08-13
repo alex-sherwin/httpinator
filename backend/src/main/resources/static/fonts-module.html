@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>HTMX!</title>
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+
+
+    <script type="importmap">
+    {
+      "imports": {
+        "@fontsource/inter": "/node_modules/@fontsource/inter/index.css"
+      }
+    }
+  </script>
+
+  <script type="module">
+      import sheet from '@fontsource/inter' assert {type: 'css'};
+
+      document.adoptedStyleSheets = [sheet];
+      shadowRoot.adoptedStyleSheets = [sheet];
+
+  </script>
+
+  <style>
+      .inter {
+          font-family: 'Inter';
+          font-weight: 400;
+      }
+  </style>
+
+</head>
+<body>
+
+<div class="inter">this is inter</div>
+
+</body>
+</html>

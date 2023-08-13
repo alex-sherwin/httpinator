@@ -23,7 +23,8 @@ const createWindow = (): void => {
   // and load the index.html of the app.
   // mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
   // mainWindow.loadURL("http://localhost:8080/ui");
-  mainWindow.loadURL("http://localhost:8080/monaco.html");
+  // mainWindow.loadURL("http://localhost:8080/monaco.html");
+  mainWindow.loadURL("http://localhost:8080/fonts.html");
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
