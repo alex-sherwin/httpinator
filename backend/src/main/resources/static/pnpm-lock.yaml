@@ -8,6 +8,9 @@ dependencies:
   '@fontsource/inter':
     specifier: 5.0.8
     version: 5.0.8
+  hack-font:
+    specifier: 3.3.0
+    version: 3.3.0
   monaco-editor:
     specifier: 0.41.0
     version: 0.41.0
@@ -16,6 +19,10 @@ packages:
 
   /@fontsource/inter@5.0.8:
     resolution: {integrity: sha512-28knWH1BfOiRalfLs90U4sge5mpQ8ZH6FS0PTT+IZMKrZ7wNHDHRuKa1kQJg+uHcc6axBppnxll+HXM4c7zo/Q==}
+    dev: false
+
+  /hack-font@3.3.0:
+    resolution: {integrity: sha512-RohrcAr3UaKiIoxDlOytCjObcUAucfFc6V5fKu6gBrvmvTfIXeBqZwR0Q5kb9qpbluThJWt326LClLKIGiFyug==}
     dev: false
 
   /monaco-editor@0.41.0:
