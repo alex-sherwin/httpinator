@@ -8,7 +8,7 @@
   <version>1.0.0-SNAPSHOT</version>
 
   <parent>
-    <groupId>com.asherwin</groupId>
+    <groupId>com.asherwin.httpinator</groupId>
     <artifactId>httpinator</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
