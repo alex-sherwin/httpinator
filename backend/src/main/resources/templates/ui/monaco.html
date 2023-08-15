@@ -1,13 +1,12 @@
 <!doctype html>
 <html lang="en"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <title>Monaco!</title>
 
-  <th:block th:insert="~{mixins/fonts :: head}"></th:block>
-  <th:block th:insert="~{mixins/monaco :: head}"></th:block>
+  <th:block th:replace="~{mixins/fonts :: head-content}"></th:block>
+  <th:block th:replace="~{mixins/monaco :: head-content}"></th:block>
 
   <style>
       #container {
