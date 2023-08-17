@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <th:block th:insert="~{mixins/htmx :: head-content}"></th:block>
+</head>
+<body>
+
+<p hx-get="/api/ping">
+    before ping
+</p>
+<p hx-get="/api/test1">
+    before test1
+</p>
+<p hx-get="/api/test1" hx-trigger="load">
+    before test1
+</p>
+<p th:text="${'a is: ' + a}"></p>
+</body>
+</html>

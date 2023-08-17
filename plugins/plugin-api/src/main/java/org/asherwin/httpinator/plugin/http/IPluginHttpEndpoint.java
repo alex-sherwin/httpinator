@@ -6,23 +6,25 @@ import java.util.List;
 /**
  * The contract to provide a method which handles an HTTP endpoint
  */
-public interface IPluginUiHttpEndpoint {
+public interface IPluginHttpEndpoint {
 
-  List<Methods> getMethods();
+  Methods[] getMethods();
 
   /**
    * This will be prefixed with "/plugins/${PLUGIN_NAME}"
    * <p>
    * Each path must start with "/"
    */
-  List<String> getPaths();
+  String[] getPaths();
+
+  Object getHandler();
 
   /**
    * The function which processes the web request
    *
    * @return
    */
-  Method getHandler();
+  Method getHandlerMethod();
 
 
   enum Methods {
