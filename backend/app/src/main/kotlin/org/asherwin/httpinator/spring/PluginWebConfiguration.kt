@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
 
+
 @Configuration
 class PluginWebConfiguration {
 
@@ -25,6 +26,5 @@ class PluginWebConfiguration {
 
 
   }
-
 
 }

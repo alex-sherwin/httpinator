@@ -17,5 +17,22 @@
 <p hx-get="/api/test1" hx-trigger="load">
     before test1
 </p>
+
+<button hx-on="htmx:afterRequest: alert('You clicked me!')">
+    Click Me!
+</button>
+<button hx-on="intersect: alert('You clicked me!')">
+    Click Me!
+</button>
+
+<script>
+    document.body.addEventListener('htmx:afterRequest', function(evt) {
+        alert('afterRequest!')
+    });
+
+</script>
+
 </body>
+
+
 </html>

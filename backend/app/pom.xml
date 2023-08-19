@@ -98,6 +98,65 @@
     <!--    <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>-->
     <plugins>
 
+
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.3.1</version>
+        <executions>
+          <execution>
+            <id>copy-resources</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.outputDirectory}/public/assets</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${project.basedir}/ui/node_modules/htmx.org/dist</directory>
+                  <targetPath>${project.build.outputDirectory}/public/assets/htmx</targetPath>
+                  <includes>
+                    <include>htmx.js</include>
+                    <include>htmx.min.js</include>
+                  </includes>
+                </resource>
+                <resource>
+                  <directory>${project.basedir}/ui/node_modules/monaco-editor</directory>
+                  <targetPath>${project.build.outputDirectory}/public/assets/monaco-editor</targetPath>
+                  <includes>
+                    <include>min/vs/loader.js</include>
+                    <include>min/vs/editor/editor.main.css</include>
+                    <include>min/vs/editor/editor.main.nls.js</include>
+                    <include>min/vs/editor/editor.main.js</include>
+                    <include>min/vs/basic-languages/javascript/javascript.js</include>
+                    <include>min/vs/basic-languages/yaml/yaml.js</include>
+                    <include>min/vs/basic-languages/xml/xml.js</include>
+                    <include>min/vs/basic-languages/sql/sql.js</include>
+                    <include>min/vs/basic-languages/markdown/markdown.js</include>
+                    <include>min/vs/basic-languages/html/html.js</include>
+                    <include>min/vs/base/**</include>
+                    <include>min/vs/language/typescript/**</include>
+                    <include>min/vs/language/json/**</include>
+                    <include>min/vs/language/html/**</include>
+                  </includes>
+                </resource>
+                <resource>
+                  <directory>${project.basedir}/ui/node_modules/@fontsource/inter/files</directory>
+                  <targetPath>${project.build.outputDirectory}/public/assets/fonts/inter</targetPath>
+                  <includes>
+                    <include>*latin*</include>
+                  </includes>
+                </resource>
+                <resource>
+                  <directory>${project.basedir}/ui/node_modules/hack-font/build/web/fonts</directory>
+                  <targetPath>${project.build.outputDirectory}/public/assets/fonts/hack</targetPath>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>

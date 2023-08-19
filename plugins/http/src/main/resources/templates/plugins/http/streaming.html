@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <th:block th:insert="~{mixins/htmx :: head-content}"></th:block>
+</head>
+<body>
+
+<div>
+
+
+  <span th:each="item: ${list}" th:text="${item.getData()} " />
+
+</div>
+
+</body>
+</html>
