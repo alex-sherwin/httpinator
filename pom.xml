@@ -31,6 +31,7 @@
   <modules>
 
     <module>backend/app</module>
+    <module>backend/config</module>
     <module>backend/runner</module>
     <module>plugins/plugin-api</module>
     <module>plugins/http</module>
