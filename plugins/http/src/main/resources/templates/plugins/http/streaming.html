@@ -9,8 +9,13 @@
 
 <div>
 
+  <button hx-on="intersect: alert('You clicked me!')">
+    Click Me!
+  </button>
 
-  <span th:each="item: ${list}" th:text="${item.getData()} " />
+
+  <div hx-get="/plugins/http/stream-data" hx-trigger="load">
+  </div>
 
 </div>
 

@@ -20,6 +20,7 @@ public class HttpPlugin implements IPlugin {
   public void registerHttpEndpoints(IPluginHttpRegistrar registrar) {
     registrar.registerEndpoint(IPluginHttpEndpoint.Methods.GET, "/plugins/http/config", this, safeMethod("httpConfig"));
     registrar.registerEndpoint(IPluginHttpEndpoint.Methods.GET, "/plugins/http/streaming", this, safeMethod("streaming"));
+    registrar.registerEndpoint(IPluginHttpEndpoint.Methods.GET, "/plugins/http/stream-data", this, safeMethod("streamData"));
   }
 
   public IPluginHttpResponse httpConfig() {
@@ -29,6 +30,14 @@ public class HttpPlugin implements IPlugin {
   }
 
   public IPluginHttpResponse streaming() {
+
+    final HashMap<String, Object> data = new HashMap<>();
+    data.put("a", "hello world");
+
+    return new ViewPluginHttpResponse("plugins/http/streaming", data);
+  }
+
+  public IPluginHttpResponse streamData() {
 
     final ArrayList<CustomData> list = new ArrayList<>();
     for (int i = 0; i < 2000; i++) {
@@ -42,7 +51,7 @@ public class HttpPlugin implements IPlugin {
     data.put("list", list);
     data.put("stream", stream);
 
-    return new ViewPluginHttpResponse("plugins/http/streaming", data);
+    return new ViewPluginHttpResponse("plugins/http/stream-data", data);
   }
 
 }
