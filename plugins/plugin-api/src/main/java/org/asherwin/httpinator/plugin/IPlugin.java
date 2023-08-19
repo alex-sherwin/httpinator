@@ -1,12 +1,12 @@
 package org.asherwin.httpinator.plugin;
 
-import org.asherwin.httpinator.plugin.registrars.IPluginUiRegistrar;
+import org.asherwin.httpinator.plugin.registrars.IPluginHttpRegistrar;
 
 import java.lang.reflect.Method;
 
 public interface IPlugin {
 
-  void registerUiEndpoints(IPluginUiRegistrar registrar);
+  void registerHttpEndpoints(IPluginHttpRegistrar registrar);
 
   default Method safeMethod(String methodName) {
     return safeMethod(this, methodName);

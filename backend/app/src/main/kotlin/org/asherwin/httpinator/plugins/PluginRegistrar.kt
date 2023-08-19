@@ -1,5 +1,6 @@
 package org.asherwin.httpinator.plugins
 
+import org.asherwin.httpinator.plugin.IPlugin
 import org.asherwin.httpinator.plugin.http.IPluginHttpEndpoint
 import org.asherwin.httpinator.plugin.http.response.IPluginHttpResponse
 import org.asherwin.httpinator.plugin.http.response.ViewPluginHttpResponse
@@ -17,7 +18,19 @@ import kotlin.reflect.jvm.javaMethod
 class PluginRegistrar : IPluginRegistrar {
 
   @Autowired
-  private lateinit var requestMappingHandlerMapping: RequestMappingHandlerMapping
+  lateinit var requestMappingHandlerMapping: RequestMappingHandlerMapping
+
+  val plugins: MutableList<IPlugin> = mutableListOf()
+
+  fun register(plugin: IPlugin) {
+    synchronized(plugins) { plugins.add(plugin) }
+  }
+
+  fun start() {
+    plugins.forEach { plugin ->
+      plugin.registerHttpEndpoints(this)
+    }
+  }
 
   override fun registerEndpoint(endpoint: IPluginHttpEndpoint) {
 

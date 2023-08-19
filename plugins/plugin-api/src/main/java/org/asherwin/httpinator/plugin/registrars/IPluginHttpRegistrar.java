@@ -4,7 +4,7 @@ import org.asherwin.httpinator.plugin.http.IPluginHttpEndpoint;
 
 import java.lang.reflect.Method;
 
-public interface IPluginUiRegistrar {
+public interface IPluginHttpRegistrar {
 
   void registerEndpoint(IPluginHttpEndpoint endpoint);
 

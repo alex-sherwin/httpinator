@@ -4,7 +4,7 @@ import org.asherwin.httpinator.plugin.IPlugin;
 import org.asherwin.httpinator.plugin.http.IPluginHttpEndpoint;
 import org.asherwin.httpinator.plugin.http.response.IPluginHttpResponse;
 import org.asherwin.httpinator.plugin.http.response.ViewPluginHttpResponse;
-import org.asherwin.httpinator.plugin.registrars.IPluginUiRegistrar;
+import org.asherwin.httpinator.plugin.registrars.IPluginHttpRegistrar;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,14 +12,14 @@ import java.util.stream.Stream;
 
 public class HttpPlugin implements IPlugin {
 
+  public HttpPlugin() {
+    System.out.println("here!");
+  }
+
   @Override
-  public void registerUiEndpoints(IPluginUiRegistrar registrar) {
-
-//    HttpPlugin.class.getMethod("httpConfig");
-
+  public void registerHttpEndpoints(IPluginHttpRegistrar registrar) {
     registrar.registerEndpoint(IPluginHttpEndpoint.Methods.GET, "/plugins/http/config", this, safeMethod("httpConfig"));
     registrar.registerEndpoint(IPluginHttpEndpoint.Methods.GET, "/plugins/http/streaming", this, safeMethod("streaming"));
-
   }
 
   public IPluginHttpResponse httpConfig() {

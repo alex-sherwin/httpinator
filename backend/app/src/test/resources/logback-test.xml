@@ -8,9 +8,10 @@
   </appender>
 
   <logger name="com.zaxxer.hikari" level="INFO"/>
-  <logger name="org.springframework" level="DEBUG"/>
+  <logger name="org.springframework" level="INFO"/>
   <logger name="org.flywaydb" level="INFO"/>
   <logger name="org.apache" level="INFO"/>
+  <logger name="org.thymeleaf" level="INFO"/>
 
   <logger name="org.asherwin" level="DEBUG"/>
 
