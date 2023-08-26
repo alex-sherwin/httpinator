@@ -20,4 +20,10 @@ class UiStaticish {
   @GetMapping(path = ["/hyperscript"])
   fun hyperscript(): String = "ui/hyperscript"
 
+  @GetMapping(path = ["/tailwind"])
+  fun tailwind(): String = "ui/tailwind"
+
+  @GetMapping(path = ["/kitchensink"])
+  fun kitchensink(): String = "ui/kitchensink"
+
 }

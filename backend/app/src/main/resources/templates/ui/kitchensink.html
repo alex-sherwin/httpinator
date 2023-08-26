@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>kitchensink</title>
+  <th:block th:insert="~{mixins/fonts :: head-content}"></th:block>
+  <th:block th:insert="~{mixins/tailwind :: head-content}"></th:block>
+  <th:block th:insert="~{mixins/htmx :: head-content}"></th:block>
+  <th:block th:insert="~{mixins/hyperscript :: head-content}"></th:block>
+
+</head>
+<body class="font-sans">
+
+<p>This should be Inter var 0123456789! Aa Bb Cc Gg</p>
+
+<button _="on click toggle .bg-gray-700 then toggle .text-pink-300 on me">
+  Click Me
+</button>
+
+
+</body>
+
+
+</html>

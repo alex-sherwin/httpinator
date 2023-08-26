@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "tailwind": "tailwindcss -i ./src/input.css -o ./dist/tailwind.css"
   },
   "author": "",
   "license": "MIT",
@@ -12,6 +13,8 @@
     "hack-font": "3.3.0",
     "htmx.org": "1.9.5",
     "hyperscript.org": "0.9.11",
-    "monaco-editor": "0.41.0"
+    "inter-ui": "3.19.3",
+    "monaco-editor": "0.41.0",
+    "tailwindcss": "3.3.3"
   }
 }
