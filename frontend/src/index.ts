@@ -27,7 +27,7 @@ const createWindow = (): void => {
   // mainWindow.loadURL("http://localhost:8080/fonts.html");
   // mainWindow.loadURL("http://localhost:8080/monaco-fonts.html");
   // mainWindow.loadURL("http://localhost:8080/ui/monaco");
-  mainWindow.loadURL("http://localhost:8080/ui/htmx");
+  mainWindow.loadURL("http://localhost:8080/ui/kitchensink");
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
