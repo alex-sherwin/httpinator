@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>kitchensink</title>
+  <th:block th:insert="~{mixins/fonts :: head-content}"></th:block>
+  <th:block th:insert="~{mixins/tailwind :: head-content}"></th:block>
+  <th:block th:insert="~{mixins/htmx :: head-content}"></th:block>
+  <th:block th:insert="~{mixins/hyperscript :: head-content}"></th:block>
+  <th:block th:insert="~{mixins/spectrum-wc :: head-content}"></th:block>
+
+  <style type="text/css">
+    .hide {
+      visibility: hidden;
+    }
+  </style>
+
+</head>
+<body id="body" class="font-sans hide">
+
+<p>This should be Inter var 0123456789! Aa Bb Cc Gg</p>
+
+<button _="on click toggle .btn-primary on me">
+  Click Me
+</button>
+
+<div>
+  <sp-theme
+      theme="spectrum"
+      color="light"
+      scale="medium"
+      style="font-family: Inter var"
+  >
+
+    <sp-button size="m">Medium</sp-button>
+
+  </sp-theme>
+
+
+</div>
+
+<script>
+
+
+  window.addEventListener('load', function () {
+    document.body.classList.remove("hide")
+
+  }, false);
+
+</script>
+
+
+</body>
+
+
+</html>
