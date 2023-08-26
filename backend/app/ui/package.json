@@ -10,10 +10,20 @@
   "license": "MIT",
   "dependencies": {
     "@fontsource/inter": "5.0.8",
+    "@lit/reactive-element": "1.6.3",
+    "@lit-labs/observers": "2.0.0",
+    "@spectrum-web-components/base": "0.37.0",
+    "@spectrum-web-components/bundle": "0.37.0",
+    "@spectrum-web-components/button": "0.37.0",
+    "@spectrum-web-components/shared": "0.37.0",
+    "@spectrum-web-components/theme": "0.37.0",
     "hack-font": "3.3.0",
     "htmx.org": "1.9.5",
     "hyperscript.org": "0.9.11",
     "inter-ui": "3.19.3",
+    "lit": "2.8.0",
+    "lit-element": "3.3.3",
+    "lit-html": "2.8.0",
     "monaco-editor": "0.41.0",
     "tailwindcss": "3.3.3"
   }

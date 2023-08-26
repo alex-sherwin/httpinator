@@ -128,6 +128,30 @@
               <outputDirectory>${project.build.outputDirectory}/public/assets</outputDirectory>
               <resources>
                 <resource>
+                  <directory>${project.basedir}/ui/node_modules/lit-element</directory>
+                  <targetPath>${project.build.outputDirectory}/public/assets/lit-element</targetPath>
+                </resource>
+                <resource>
+                  <directory>${project.basedir}/ui/node_modules/lit-html</directory>
+                  <targetPath>${project.build.outputDirectory}/public/assets/lit-html</targetPath>
+                </resource>
+                <resource>
+                  <directory>${project.basedir}/ui/node_modules/lit</directory>
+                  <targetPath>${project.build.outputDirectory}/public/assets/lit</targetPath>
+                </resource>
+                <resource>
+                  <directory>${project.basedir}/ui/node_modules/@lit-labs</directory>
+                  <targetPath>${project.build.outputDirectory}/public/assets/@lit-labs</targetPath>
+                </resource>
+                <resource>
+                  <directory>${project.basedir}/ui/node_modules/@lit</directory>
+                  <targetPath>${project.build.outputDirectory}/public/assets/@lit</targetPath>
+                </resource>
+                <resource>
+                  <directory>${project.basedir}/ui/node_modules/@spectrum-web-components</directory>
+                  <targetPath>${project.build.outputDirectory}/public/assets/@spectrum-web-components</targetPath>
+                </resource>
+                <resource>
                   <directory>${project.basedir}/ui/dist</directory>
                   <targetPath>${project.build.outputDirectory}/public/assets/css</targetPath>
                   <includes>

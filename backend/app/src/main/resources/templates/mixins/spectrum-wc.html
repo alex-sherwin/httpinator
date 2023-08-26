@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- abc -->
+<head>
+
+  <th:block th:fragment="head-content">
+
+    <script type="importmap">
+      {
+        "imports": {
+          "lit": "/assets/lit/index.js",
+          "lit/": "/assets/lit/",
+          "lit-html": "/assets/lit-html/lit-html.js",
+          "lit-html/": "/assets/lit-html/",
+          "lit-element": "/assets/lit-element/index.js",
+          "lit-element/": "/assets/lit-element/",
+          "@spectrum-web-components/base": "/assets/@spectrum-web-components/base/src/index.js",
+          "@spectrum-web-components/": "/assets/@spectrum-web-components/",
+          "@lit/": "/assets/@lit/",
+          "@lit/reactive-element": "/assets/@lit/reactive-element/reactive-element.js",
+          "@lit-labs/": "/assets/@lit-labs/"
+        }
+      }
+    </script>
+
+    <script src="/assets/@spectrum-web-components/theme/sp-theme.js" type="module"></script>
+    <script src="/assets/@spectrum-web-components/theme/src/themes.js" type="module"></script>
+    <script src="/assets/@spectrum-web-components/button/sp-button.js" type="module"></script>
+  </th:block>
+
+</head>
+</html>
