@@ -17,4 +17,7 @@ class UiStaticish {
   @GetMapping(path = ["/htmx"])
   fun htmx(): String = "ui/htmx"
 
+  @GetMapping(path = ["/hyperscript"])
+  fun hyperscript(): String = "ui/hyperscript"
+
 }

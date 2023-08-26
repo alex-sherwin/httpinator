@@ -124,8 +124,23 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
+              <overwrite>false</overwrite>
               <outputDirectory>${project.build.outputDirectory}/public/assets</outputDirectory>
               <resources>
+                <resource>
+                  <directory>${project.basedir}/ui/node_modules/hyperscript.org/dist</directory>
+                  <targetPath>${project.build.outputDirectory}/public/assets/hyperscript</targetPath>
+                  <includes>
+                    <include>_hyperscript.js</include>
+                    <include>_hyperscript.min.js</include>
+                    <include>eventsource.js</include>
+                    <include>hdb.js</include>
+                    <include>hdb.min.js</include>
+                    <include>socket.js</include>
+                    <include>template.js</include>
+                    <include>worker.js</include>
+                  </includes>
+                </resource>
                 <resource>
                   <directory>${project.basedir}/ui/node_modules/htmx.org/dist</directory>
                   <targetPath>${project.build.outputDirectory}/public/assets/htmx</targetPath>

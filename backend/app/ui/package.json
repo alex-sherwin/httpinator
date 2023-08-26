@@ -10,7 +10,8 @@
   "dependencies": {
     "@fontsource/inter": "5.0.8",
     "hack-font": "3.3.0",
-    "htmx.org": "1.9.4",
+    "htmx.org": "1.9.5",
+    "hyperscript.org": "0.9.11",
     "monaco-editor": "0.41.0"
   }
 }

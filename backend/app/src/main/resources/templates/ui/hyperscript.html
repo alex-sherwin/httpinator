@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <th:block th:insert="~{mixins/htmx :: head-content}"></th:block>
+  <th:block th:insert="~{mixins/hyperscript :: head-content}"></th:block>
+  <style type="text/css">
+    .red {
+        color: hotpink;
+    }
+  </style>
+</head>
+<body>
+
+<button script="on click toggle .red on me">
+  Click Me
+</button>
+
+<script type="text/hyperscript">
+  -- on event
+</script>
+
+<script>
+    document.body.addEventListener('htmx:afterRequest', function (evt) {
+        alert('afterRequest!')
+    });
+
+</script>
+
+</body>
+
+
+</html>

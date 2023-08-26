@@ -1,5 +1,16 @@
 # httpinator
 
+## Building & Running via Local IDE
+
+1. `pnpm install` in project root (pnpm workspaces) to install deps for
+   1. ***backend/app/ui***, which is used by **backend/app/pom.xml**'s to copy various NPM packages into **backend/app/target/classes/public** during Maven's **verify** phase.  These specific files are designed to be bundled into the final JAR artifact so they are available on the classpath and are served up by the WebServer as static JS & ****CSS assets. 
+   2. **frontend**, which is an electron-forge based Electron project, meant to house the completely built application.
+2. Run/Debug Kotlin main function `org.asherwin.httpinator.ApplicationITKt.main`
+
+## Building & Packaging
+
+TODO
+
 # TODOs
 
 1. Run a Groovy LSP exposed via Spring Boot backend (JSON-RPC 2.0 protocol I think), see https://langserver.org/ for a list, probably use https://github.com/GroovyLanguageServer/groovy-language-server
