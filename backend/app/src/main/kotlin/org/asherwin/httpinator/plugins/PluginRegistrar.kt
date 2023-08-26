@@ -2,13 +2,10 @@ package org.asherwin.httpinator.plugins
 
 import org.asherwin.httpinator.plugin.IPlugin
 import org.asherwin.httpinator.plugin.http.IPluginHttpEndpoint
-import org.asherwin.httpinator.plugin.http.response.IPluginHttpResponse
-import org.asherwin.httpinator.plugin.http.response.ViewPluginHttpResponse
 import org.asherwin.httpinator.plugin.registrars.IPluginRegistrar
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.web.bind.annotation.RequestMethod
-import org.springframework.web.servlet.ModelAndView
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
 import org.springframework.web.util.pattern.PathPatternParser
@@ -39,7 +36,7 @@ class PluginRegistrar : IPluginRegistrar {
 
     val methods = endpoint.methods.map { RequestMethod.resolve(it.name) }.toTypedArray()
 
-    val proxy = RequestProxy(endpoint)
+    val proxy = PluginRequestProxy(endpoint)
 
     requestMappingHandlerMapping.registerMapping(
       RequestMappingInfo
@@ -48,37 +45,9 @@ class PluginRegistrar : IPluginRegistrar {
         .options(options)
         .build(),
       proxy,
-      RequestProxy::execute.javaMethod!!,
+      PluginRequestProxy::execute.javaMethod!!,
     )
 
   }
-
-
-  class RequestProxy(
-    val endpoint: IPluginHttpEndpoint,
-  ) {
-
-    fun execute(): Any? {
-
-      val originalResult = endpoint.handlerMethod.invoke(endpoint.handler)
-
-      if (originalResult is IPluginHttpResponse) {
-        return convertToSpringResponseType(originalResult)
-      }
-
-      return originalResult
-    }
-
-    fun convertToSpringResponseType(original: IPluginHttpResponse): Any {
-
-      if (original is ViewPluginHttpResponse) {
-        return ModelAndView(original.viewName, original.data)
-      }
-
-      throw RuntimeException("Unsupported IPluginHttpResponse implementation of type ${original.javaClass.name}")
-    }
-
-  }
-
 
 }
