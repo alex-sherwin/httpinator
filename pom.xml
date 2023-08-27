@@ -36,6 +36,7 @@
     <module>backend/runner</module>
     <module>plugins/plugin-api</module>
     <module>plugins/http</module>
+    <module>poc/treemodel</module>
 
   </modules>
 
