@@ -35,6 +35,7 @@
     <module>backend/config</module>
     <module>backend/runner</module>
     <module>backend/scripting</module>
+    <module>backend/tree</module>
     <module>plugins/plugin-api</module>
     <module>plugins/http</module>
     <module>poc/scripts-poc</module>

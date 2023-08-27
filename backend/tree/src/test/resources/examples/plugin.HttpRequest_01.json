@@ -1,23 +1,25 @@
 {
-  // built-in's
   "id": "[UUID]",
-  "type": "folder",
+  "type": "plugin.Folder",
   "displayName": "My Project Plan",
+  "data": {},
   "children": [
     {
+      "id": "[UUID]",
       "type": "plugin.HttpRequest",
+      "displayName": "Get root index",
       "data": {
         "method": {
           "type": "primitive.String",
           "data": {
             "value": "GET"
-          },
+          }
         },
         "connectTimeoutMillis": {
           "type": "primitive.Long",
           "data": {
             "value": 1000
-          },
+          }
         },
         "url": {
           "type": "script.SpEL",
@@ -27,9 +29,10 @@
         },
         "entity": {
           "type": "null",
-          "data": null,
-        },
-      }
+          "data": null
+        }
+      },
+      "children": []
     }
   ]
 }
