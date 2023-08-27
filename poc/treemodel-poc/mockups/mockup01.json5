@@ -1,0 +1,22 @@
+{
+  // built-in's
+  "id": "[UUID]",
+  "type": "folder",
+  "displayName": "My Project Plan",
+
+  "children": [
+    {
+      "type": "plugin.HttpRequest",
+
+      "data": {
+
+        "method": { "type":  "primitive.String", value:  "POST"},
+        "url": {"type":  "script.InterpolatedString", },
+        "entity": {"type":  "script.Groovy", }
+
+      }
+
+
+    }
+  ]
+}
