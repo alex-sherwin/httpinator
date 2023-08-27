@@ -32,7 +32,7 @@ class ExpressionConstructorSafeListTest {
     )
 
     Assertions.assertEquals(123L, longValueOfExpression.getValue(evalContext))
-    Assertions.assertThrows(AccessException::class.java, { intValueOfExpression.getValue(evalContext) })
+    Assertions.assertThrows(AccessException::class.java) { intValueOfExpression.getValue(evalContext) }
   }
 
   @Test
@@ -58,8 +58,8 @@ class ExpressionConstructorSafeListTest {
       )
     )
 
-    Assertions.assertThrows(AccessException::class.java, { intValueOfExpression.getValue(evalContext) })
-    Assertions.assertThrows(EvaluationException::class.java, { newStringExpression.getValue(evalContext) })
+    Assertions.assertThrows(AccessException::class.java) { intValueOfExpression.getValue(evalContext) }
+    Assertions.assertThrows(EvaluationException::class.java) { newStringExpression.getValue(evalContext) }
   }
 
   @Test
@@ -83,7 +83,7 @@ class ExpressionConstructorSafeListTest {
       )
     )
 
-    Assertions.assertThrows(EvaluationException::class.java, { newIntegerExpression.getValue(evalContext) })
+    Assertions.assertThrows(EvaluationException::class.java) { newIntegerExpression.getValue(evalContext) }
 
     // these should work
     Assertions.assertEquals("", newStringExpression.getValue(evalContext))
