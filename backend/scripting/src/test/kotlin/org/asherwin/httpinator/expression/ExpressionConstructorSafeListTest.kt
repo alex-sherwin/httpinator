@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.springframework.expression.AccessException
 import org.springframework.expression.EvaluationException
+import org.springframework.expression.spel.SpelCompilerMode
+import org.springframework.expression.spel.SpelParserConfiguration
+import org.springframework.expression.spel.standard.SpelExpression
 import org.springframework.expression.spel.standard.SpelExpressionParser
 import org.springframework.expression.spel.support.ReflectiveConstructorResolver
 import org.springframework.expression.spel.support.StandardEvaluationContext
@@ -14,9 +17,13 @@ class ExpressionConstructorSafeListTest {
   @Test
   fun staticMethodSafeList() {
 
-    val parser = SpelExpressionParser()
-    val intValueOfExpression = parser.parseExpression("T(java.lang.Integer).valueOf(123)")
-    val longValueOfExpression = parser.parseExpression("T(java.lang.Long).valueOf(123L)")
+    val config = SpelParserConfiguration(SpelCompilerMode.IMMEDIATE, null)
+
+    val parser = SpelExpressionParser(config)
+    val intValueOfExpression = parser.parseExpression("T(java.lang.Integer).valueOf(123)") as SpelExpression
+    val longValueOfExpression = parser.parseExpression("T(java.lang.Long).valueOf(123L)") as SpelExpression
+
+    longValueOfExpression.getAST()
 
     val evalContext = StandardEvaluationContext()
     evalContext.setTypeLocator(SafeListTypeLocator(
