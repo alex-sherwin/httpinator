@@ -1,17 +1,17 @@
-import {basicSetup, minimalSetup, EditorView} from "codemirror"
+import * as codemirror from "codemirror"
+import * as state from "@codemirror/state"
+import * as view from "@codemirror/view"
+import * as autocomplete from "@codemirror/autocomplete";
 import {javascript} from "@codemirror/lang-javascript"
 import {json} from "@codemirror/lang-json"
-import {crosshairCursor} from "@codemirror/view"
-import {EditorState} from "@codemirror/state"
-import * as autocomplete from "@codemirror/autocomplete";
+
+import { Place } from "codemirror"
 
 export {
-  EditorView,
-  minimalSetup,
-  basicSetup,
+  codemirror,
   javascript,
   json,
-  crosshairCursor,
-  EditorState,
+  state,
+  view,
   autocomplete,
 };

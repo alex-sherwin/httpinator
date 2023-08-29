@@ -13,14 +13,14 @@
   </script>
 
   <script type="module">
-    import {EditorView, basicSetup, javascript, json, crosshairCursor} from 'codemirror';
+    import {codemirror, javascript, json, view} from 'codemirror';
 
-    let editor = new EditorView({
+    let editor = new codemirror.EditorView({
       extensions: [
-        basicSetup,
+        codemirror.basicSetup,
         javascript(),
         json(),
-        crosshairCursor({ key: "Alt" }),
+        view.crosshairCursor({ key: "Alt" }),
       ],
       parent: document.body,
 

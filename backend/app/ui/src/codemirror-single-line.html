@@ -13,16 +13,83 @@
   </script>
 
   <script type="module">
-    import {EditorView, minimalSetup, EditorState, autocomplete} from 'codemirror';
+    import {codemirror, state, autocomplete, view} from 'codemirror';
 
     const { autocompletion } = autocomplete;
+
+
+    //!placeholderWidget
+
+    // https://github.com/codemirror/website/blob/ceaf7297b6c271b74af112a3f679fdaa2afc7a01/site/examples/decoration/placeholder.ts
+    class PlaceholderWidget extends view.WidgetType {
+
+      constructor(name) {
+        super()
+        this.name = name
+      }
+
+      eq(other) {
+        return this.name == other.name
+      }
+
+      toDOM() {
+        let elt = document.createElement("span")
+        elt.style.cssText = `
+      border: 1px solid blue;
+      border-radius: 4px;
+      padding: 0 3px;
+      background: lightblue;`
+        elt.textContent = this.name
+        elt.onclick=() => alert(`clicked on placeholder '${this.name}'!`)
+        return elt
+      }
+
+      ignoreEvent() {
+        return false
+      }
+    }
+
+
+    //!placeholderMatcher
+
+    const placeholderMatcher = new view.MatchDecorator({
+      regexp: /\[\[([\w ]+)]]/g,
+      decoration: (match) => {
+        console.log("match[1]", match[1]);
+        return view.Decoration.replace({
+          widget: new PlaceholderWidget(match[1]),
+        });
+      }
+    })
+
+    //!placeholderPlugin
+
+    const placeholders = view.ViewPlugin.fromClass(class {
+      placeholders
+
+      constructor(view) {
+        this.placeholders = placeholderMatcher.createDeco(view)
+      }
+
+      update(update) {
+        this.placeholders = placeholderMatcher.updateDeco(update, this.placeholders)
+      }
+    }, {
+      decorations: instance => instance.placeholders,
+      provide: (plugin) => {
+        return view.EditorView.atomicRanges.of((view) => {
+          return view.plugin(plugin)?.placeholders || view.Decoration.none
+        });
+      }
+    })
+
 
     // Our list of completions (can be static, since the editor
     /// will do filtering based on context).
     const completions = [
-      {label: "panic", type: "keyword"},
-      {label: "park", type: "constant", info: "Test completion"},
-      {label: "password", type: "variable"},
+      { label: "panic", type: "keyword" },
+      { label: "park", type: "constant", info: "Test completion" },
+      { label: "password", type: "variable" },
     ]
 
     function myCompletions(context) {
@@ -38,17 +105,20 @@
     }
 
 
-    let editor = new EditorView({
+    let editor = new codemirror.EditorView({
+      doc: "this [[is the]] doc [[here]]! ok",
       extensions: [
-        minimalSetup,
+        placeholders,
+        codemirror.minimalSetup,
         // Transaction filters can inspect transactions and
         // add/replace them with other transactions. If a
         // transaction would have made the document more than
         // one line long, it is filtered out.
-        EditorState.transactionFilter.of(tr => {
+
+        state.EditorState.transactionFilter.of(tr => {
           return tr.newDoc.lines > 1 ? [] : [tr]
         }),
-        autocompletion({override: [myCompletions]})
+        autocompletion({ override: [myCompletions] })
 
       ],
       parent: document.body,
