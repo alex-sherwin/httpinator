@@ -6,14 +6,14 @@
   "scripts": {
     "tailwind": "tailwindcss -i ./src/input.css -o ./dist/tailwind.css",
     "httpd": "http-server ./ --port 8888 -d -i",
-    "build:codemirror": "rollup src/codemirror.mjs -f iife -o dist/codemirror.bundle.js -p @rollup/plugin-node-resolve",
-    "build:codemirror-esm": "rollup src/codemirror.esm.mjs -f es -o dist/codemirror.esm.js -p @rollup/plugin-node-resolve"
+    "build:codemirror": "rollup src/codemirror.mjs -f es -o dist/codemirror.js -p @rollup/plugin-node-resolve"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "@codemirror/lang-javascript": "6.2.1",
     "@codemirror/lang-json": "6.0.1",
+    "@codemirror/state": "6.2.1",
     "@codemirror/view": "6.17.0",
     "@fontsource/inter": "5.0.8",
     "@lit/reactive-element": "1.6.3",

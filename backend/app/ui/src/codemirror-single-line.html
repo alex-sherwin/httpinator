@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>codemirror esm</title>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "codemirror": "/dist/codemirror.js"
+      }
+    }
+  </script>
+
+  <script type="module">
+    import {EditorView, minimalSetup, EditorState} from 'codemirror';
+
+    let editor = new EditorView({
+      extensions: [
+        minimalSetup,
+        // Transaction filters can inspect transactions and
+        // add/replace them with other transactions. If a
+        // transaction would have made the document more than
+        // one line long, it is filtered out.
+        EditorState.transactionFilter.of(tr => {
+          return tr.newDoc.lines > 1 ? [] : [tr]
+        })
+      ],
+      parent: document.body,
+
+    })
+
+
+  </script>
+
+</head>
+
+
+<body>
+<h1>CodeMirror ESM</h1>
+
+
+</body>
+
+
+</html>

@@ -1,8 +1,16 @@
-import {EditorView, basicSetup} from "codemirror"
+import {basicSetup, minimalSetup, EditorView} from "codemirror"
 import {javascript} from "@codemirror/lang-javascript"
 import {json} from "@codemirror/lang-json"
+import {crosshairCursor} from "@codemirror/view"
+import {EditorState} from "@codemirror/state"
 
-let editor = new EditorView({
-  extensions: [basicSetup, javascript(), json()],
-  parent: document.body
-})
+
+export {
+  EditorView,
+  minimalSetup,
+  basicSetup,
+  javascript,
+  json,
+  crosshairCursor,
+  EditorState,
+};
