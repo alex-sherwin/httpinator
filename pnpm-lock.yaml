@@ -8,15 +8,27 @@ importers:
 
   backend/app/ui:
     dependencies:
+      '@codemirror/autocomplete':
+        specifier: 6.9.0
+        version: 6.9.0(@codemirror/language@6.9.0)(@codemirror/state@6.2.1)(@codemirror/view@6.17.0)(@lezer/common@1.0.4)
+      '@codemirror/commands':
+        specifier: 6.2.5
+        version: 6.2.5
       '@codemirror/lang-javascript':
         specifier: 6.2.1
         version: 6.2.1
       '@codemirror/lang-json':
         specifier: 6.0.1
         version: 6.0.1
+      '@codemirror/search':
+        specifier: 6.5.2
+        version: 6.5.2
       '@codemirror/state':
         specifier: 6.2.1
         version: 6.2.1
+      '@codemirror/theme-one-dark':
+        specifier: 6.1.2
+        version: 6.1.2
       '@codemirror/view':
         specifier: 6.17.0
         version: 6.17.0
@@ -256,6 +268,15 @@ packages:
 
   /@codemirror/state@6.2.1:
     resolution: {integrity: sha512-RupHSZ8+OjNT38zU9fKH2sv+Dnlr8Eb8sl4NOnnqz95mCFTZUaiRP8Xv5MeeaG0px2b8Bnfe7YGwCV3nsBhbuw==}
+    dev: false
+
+  /@codemirror/theme-one-dark@6.1.2:
+    resolution: {integrity: sha512-F+sH0X16j/qFLMAfbciKTxVOwkdAS336b7AXTKOZhy8BR3eH/RelsnLgLFINrpST63mmN2OuwUt0W2ndUgYwUA==}
+    dependencies:
+      '@codemirror/language': 6.9.0
+      '@codemirror/state': 6.2.1
+      '@codemirror/view': 6.17.0
+      '@lezer/highlight': 1.1.6
     dev: false
 
   /@codemirror/view@6.17.0:

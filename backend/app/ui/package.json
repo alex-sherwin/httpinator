@@ -11,9 +11,13 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@codemirror/autocomplete": "6.9.0",
+    "@codemirror/commands": "6.2.5",
     "@codemirror/lang-javascript": "6.2.1",
     "@codemirror/lang-json": "6.0.1",
+    "@codemirror/search": "6.5.2",
     "@codemirror/state": "6.2.1",
+    "@codemirror/theme-one-dark": "6.1.2",
     "@codemirror/view": "6.17.0",
     "@fontsource/inter": "5.0.8",
     "@lit/reactive-element": "1.6.3",

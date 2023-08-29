@@ -3,7 +3,7 @@ import {javascript} from "@codemirror/lang-javascript"
 import {json} from "@codemirror/lang-json"
 import {crosshairCursor} from "@codemirror/view"
 import {EditorState} from "@codemirror/state"
-
+import * as autocomplete from "@codemirror/autocomplete";
 
 export {
   EditorView,
@@ -13,4 +13,5 @@ export {
   json,
   crosshairCursor,
   EditorState,
+  autocomplete,
 };
