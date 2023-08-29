@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>codemirror esm</title>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "codemirror": "/dist/codemirror.esm.js"
+      }
+    }
+  </script>
+
+  <script type="module">
+    import {EditorView, basicSetup, javascript, json} from 'codemirror';
+
+    let editor = new EditorView({
+      extensions: [basicSetup, javascript(), json()],
+      parent: document.body,
+    })
+
+
+  </script>
+
+</head>
+
+
+<body>
+<h1>CodeMirror ESM</h1>
+
+
+</body>
+
+
+</html>
