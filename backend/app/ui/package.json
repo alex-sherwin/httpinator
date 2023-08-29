@@ -14,6 +14,7 @@
   "dependencies": {
     "@codemirror/lang-javascript": "6.2.1",
     "@codemirror/lang-json": "6.0.1",
+    "@codemirror/view": "6.17.0",
     "@fontsource/inter": "5.0.8",
     "@lit/reactive-element": "1.6.3",
     "@lit-labs/observers": "2.0.0",
